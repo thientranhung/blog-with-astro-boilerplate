@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .prose pre {
+            background-color: #0A0A0A !important;
+            border: 1px solid #1F1F1F;
+        }
+        .prose code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #1c1f27;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1F1F1F;
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapsible-content.open {
+            max-height: 500px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#581e00",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "surface": "#0A0A0A",
+                        "surface-bright": "#363942",
+                        "muted": "#888888",
+                        "surface-container-lowest": "#0b0e15",
+                        "outline": "#8b90a0",
+                        "primary-container": "#0070f3",
+                        "secondary-container": "#6807ba",
+                        "surface-dim": "#10131b",
+                        "border": "#1F1F1F",
+                        "secondary": "#dbb8ff",
+                        "on-primary-fixed": "#001a43",
+                        "surface-container": "#1c1f27",
+                        "surface-container-highest": "#32353d",
+                        "primary-fixed-dim": "#aec6ff",
+                        "on-surface": "#e0e2ed",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-container": "#d0a6ff",
+                        "surface-tint": "#aec6ff",
+                        "on-tertiary-container": "#fffeff",
+                        "inverse-on-surface": "#2d3039",
+                        "inverse-surface": "#e0e2ed",
+                        "on-secondary": "#470083",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c1c6d7",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-variant": "#32353d",
+                        "on-primary-fixed-variant": "#004397",
+                        "surface-container-high": "#272a32",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#ca4e00",
+                        "on-secondary-fixed": "#2b0052",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#ffffff",
+                        "foreground": "#EDEDED",
+                        "outline-variant": "#414754",
+                        "tertiary": "#ffb596",
+                        "secondary-fixed": "#efdbff",
+                        "secondary-fixed-dim": "#dbb8ff",
+                        "surface-container-low": "#181b23",
+                        "on-primary": "#002e6b",
+                        "primary": "#aec6ff",
+                        "on-secondary-fixed-variant": "#6600b7",
+                        "inverse-primary": "#0059c5",
+                        "on-background": "#e0e2ed",
+                        "background": "#000000",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base-unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "body-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-code": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "label-code": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-foreground font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 z-50 w-full bg-background border-b border-border">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-foreground" href="/">Technical Blog</a>
+<div class="hidden md:flex gap-6">
+<a class="text-on-surface-variant font-label-code text-label-code hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-code text-label-code transition-colors duration-200" href="#">Posts</a>
+<a class="text-on-surface-variant font-label-code text-label-code hover:text-primary transition-colors duration-200" href="#">Tags</a>
+<a class="text-on-surface-variant font-label-code text-label-code hover:text-primary transition-colors duration-200" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface hover:text-primary transition-colors">language</button>
+<button class="material-symbols-outlined text-on-surface hover:text-primary transition-colors">dark_mode</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20 px-margin-mobile md:px-0">
+<!-- Post Content Wrapper: Restricted to 42rem for high readability -->
+<article class="max-w-[42rem] mx-auto">
+<!-- Back & Language Switcher -->
+<div class="flex justify-between items-center mb-8">
+<a class="group flex items-center gap-2 text-muted hover:text-primary transition-colors font-label-code text-label-code" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Quay lại
+                </a>
+<button class="text-label-code font-label-code bg-surface-container border border-border px-3 py-1 hover:border-primary transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">translate</span>
+                    Đọc bằng tiếng Anh
+                </button>
+</div>
+<!-- Header -->
+<header class="mb-10">
+<h1 class="font-headline-lg text-headline-lg mb-4 text-foreground leading-tight">
+                    Xây dựng Blog Kỹ thuật với Obsidian và Astro: Tối ưu hóa Workflow của bạn
+                </h1>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted font-body-sm mb-6">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        24 tháng 5, 2024
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                        Thái Duy
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                        12 phút đọc
+                    </div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-code text-label-code bg-surface-container border border-border px-2 py-0.5 text-primary">#Astro</span>
+<span class="font-label-code text-label-code bg-surface-container border border-border px-2 py-0.5 text-primary">#Obsidian</span>
+<span class="font-label-code text-label-code bg-surface-container border border-border px-2 py-0.5 text-primary">#WebDev</span>
+</div>
+</header>
+<!-- Collapsible TOC -->
+<aside class="mb-10 bg-surface-container-low border border-border">
+<button class="w-full flex justify-between items-center p-4 font-label-code text-label-code text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleTOC()">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined">list</span>
+                        Mục lục
+                    </span>
+<span class="material-symbols-outlined transition-transform" id="toc-chevron">expand_more</span>
+</button>
+<div class="collapsible-content" id="toc-content">
+<nav class="p-4 pt-0 border-t border-border/50 font-body-sm space-y-2">
+<a class="block text-muted hover:text-primary transition-colors ml-0" href="#intro">1. Giới thiệu Obsidian as a CMS</a>
+<a class="block text-muted hover:text-primary transition-colors ml-4" href="#setup">1.1 Cài đặt cấu trúc thư mục</a>
+<a class="block text-muted hover:text-primary transition-colors ml-4" href="#plugins">1.2 Các Plugin cần thiết</a>
+<a class="block text-muted hover:text-primary transition-colors ml-0" href="#astro-config">2. Cấu hình Astro để đọc Markdown</a>
+<a class="block text-muted hover:text-primary transition-colors ml-0" href="#deployment">3. Tự động hóa quá trình Deploy</a>
+</nav>
+</div>
+</aside>
+<!-- Post Body Content -->
+<section class="prose prose-invert max-w-none">
+<p class="text-body-md text-on-surface mb-6 leading-relaxed">
+                    Trong thế giới phát triển phần mềm hiện đại, việc quản lý kiến thức cá nhân và xuất bản nội dung thường là hai quy trình tách biệt. Tuy nhiên, với sự kết hợp của <strong>Obsidian</strong> và <strong>Astro</strong>, chúng ta có thể tạo ra một hệ thống mượt mà nơi ghi chú cá nhân trở thành bài viết blog chỉ với một thao tác push.
+                </p>
+<!-- Callout (Note) -->
+<div class="my-8 p-4 bg-primary-container/10 border-l-4 border-primary-container flex gap-4">
+<span class="material-symbols-outlined text-primary-container">info</span>
+<div>
+<p class="font-label-code text-label-code text-primary-container mb-1">LƯU Ý</p>
+<p class="text-body-sm text-on-surface">Bài viết này giả định bạn đã có kiến thức cơ bản về Git và Node.js. Các ví dụ code sẽ sử dụng Astro v4.0 mới nhất.</p>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-foreground mt-12 mb-4" id="intro">1. Giới thiệu Obsidian as a CMS</h2>
+<p class="text-body-md text-on-surface mb-6 leading-relaxed">
+                    Obsidian không chỉ là một ứng dụng ghi chú. Với cấu trúc file phẳng dựa trên Markdown, nó là một ứng cử viên hoàn hảo để đóng vai trò Content Management System (CMS) cho các Static Site Generators như Astro.
+                </p>
+<div class="relative w-full aspect-video mb-8 overflow-hidden border border-border">
+<img class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="A clean, dark-themed code editor environment showcasing JavaScript logic and file structures. The lighting is low-key with sharp cyan and purple highlights. The aesthetic is technical and minimalist, conveying a professional software development workflow. Soft ambient shadows define the depth between the editor and the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX__LMdvmKO-mxY9IjFF53G4Whmt502dB_u1Tx_ZZD-5c7ML6qiGx6L0xhEONw5-_n5Dic4je5zzXDlP6sNYZYVgO4HJS2szVk2YXsiX1bDwLQLL3n30W6IDdZfJ_rWa6uS-sw5aUumBGzlQZO3kxlk9JNKc8pP7dx11eiCaF5TLvodDh359bo6-jAVTF-sfkjYdpL4OE1fJ3THKVKCbMObV93XCjcHF63sbuWMdKDDZk1gq2lcVSi97ZRWQJ7x5jYwxEXacAbtZI6"/>
+</div>
+<h3 class="font-bold text-lg text-foreground mt-8 mb-3" id="setup">1.1 Cài đặt cấu trúc thư mục</h3>
+<p class="text-body-md text-on-surface mb-4">
+                    Cấu trúc thư mục đóng vai trò sống còn. Bạn nên đặt thư mục content của blog nằm trong Vault của Obsidian:
+                </p>
+<pre class="p-4 rounded-sm font-label-code text-[14px] overflow-x-auto text-on-surface-variant">my-vault/
+├── 00_Inbox/
+├── 10_Projects/
+└── 20_Public_Blog/  &lt;-- Trỏ Astro content vào đây
+    ├── post-1.md
+    └── images/
+                </pre>
+<p class="text-body-md text-on-surface mt-6 mb-12">
+                    Tiếp theo, chúng ta sẽ tìm hiểu cách sử dụng Content Collections trong Astro để tự động hóa việc lấy dữ liệu từ thư mục này một cách an toàn và mạnh mẽ.
+                </p>
+</section>
+<!-- Backlinks Section (Indigo Chips) -->
+<section class="mt-16 pt-12 border-t border-border">
+<h4 class="font-label-code text-label-code text-muted mb-4 uppercase tracking-wider">Bài viết liên quan (Backlinks)</h4>
+<div class="flex flex-wrap gap-3">
+<a class="bg-secondary-container/20 border border-secondary-container/50 px-3 py-1.5 font-label-code text-label-code text-secondary-container hover:bg-secondary-container/30 transition-all" href="#">
+                        Tối ưu hóa SEO cho Astro
+                    </a>
+<a class="bg-secondary-container/20 border border-secondary-container/50 px-3 py-1.5 font-label-code text-label-code text-secondary-container hover:bg-secondary-container/30 transition-all" href="#">
+                        Markdown Tips &amp; Tricks
+                    </a>
+<a class="bg-secondary-container/20 border border-secondary-container/50 px-3 py-1.5 font-label-code text-label-code text-secondary-container hover:bg-secondary-container/30 transition-all" href="#">
+                        Hệ thống Zettelkasten
+                    </a>
+</div>
+</section>
+<!-- Series Navigation -->
+<section class="mt-12 bg-surface-container border border-border p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code text-primary">Series: Obsidian to Astro</span>
+<span class="font-label-code text-label-code text-muted">2 / 5 bài</span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 items-start group">
+<span class="w-8 h-8 flex items-center justify-center bg-background border border-border text-muted font-label-code text-xs group-hover:border-primary transition-colors">01</span>
+<div>
+<a class="text-body-sm text-on-surface hover:text-primary transition-colors font-semibold block" href="#">Tại sao chọn Astro cho Blog Kỹ thuật?</a>
+<p class="text-xs text-muted mt-0.5">Đã xuất bản</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="w-8 h-8 flex items-center justify-center bg-primary border border-primary text-on-primary font-label-code text-xs">02</span>
+<div>
+<span class="text-body-sm text-foreground font-bold block">Thiết lập Workflow Obsidian</span>
+<p class="text-xs text-primary mt-0.5">Đang đọc</p>
+</div>
+</div>
+<div class="flex gap-4 items-start group opacity-60 hover:opacity-100 transition-opacity">
+<span class="w-8 h-8 flex items-center justify-center bg-background border border-border text-muted font-label-code text-xs group-hover:border-primary transition-colors">03</span>
+<div>
+<a class="text-body-sm text-on-surface hover:text-primary transition-colors font-semibold block" href="#">Xử lý hình ảnh và Asset</a>
+<p class="text-xs text-muted mt-0.5">Sắp tới</p>
+</div>
+</div>
+</div>
+</section>
+</article>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-background border-t border-border">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-4 md:mb-0">
+<span class="text-body-md font-body-md font-bold text-foreground">Technical Blog</span>
+<p class="text-muted font-body-sm mt-1">© 2024 Technical Blog. Built with precision.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-muted font-label-code text-label-code hover:text-primary transition-colors duration-200" href="#">RSS</a>
+<a class="text-muted font-label-code text-label-code hover:text-primary transition-colors duration-200" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+<script>
+        function toggleTOC() {
+            const content = document.getElementById('toc-content');
+            const chevron = document.getElementById('toc-chevron');
+            content.classList.toggle('open');
+            if (content.classList.contains('open')) {
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Initialize micro-interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll for TOC links
+            document.querySelectorAll('#toc-content a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

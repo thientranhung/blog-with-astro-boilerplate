@@ -1,0 +1,51 @@
+---
+// alternateUrls: locale → absolute or relative URL for that locale's version of this page
+// currentLocale: the locale currently being rendered
+type Props = {
+  alternateUrls: Partial<Record<string, string>>;
+  currentLocale: string;
+};
+
+const { alternateUrls, currentLocale } = Astro.props;
+const locales = ["vi", "en"] as const;
+---
+
+<div class="flex items-center gap-1 text-sm font-medium">
+  {
+    locales.map((locale, i) => {
+      const url = alternateUrls[locale];
+      const isCurrent = locale === currentLocale;
+
+      return (
+        <>
+          {i > 0 && (
+            <span aria-hidden="true" class="text-muted-foreground">
+              /
+            </span>
+          )}
+          {isCurrent ? (
+            <span class="text-accent" aria-current="true">
+              {locale.toUpperCase()}
+            </span>
+          ) : url ? (
+            <a
+              href={url}
+              class="hover:text-accent text-muted-foreground transition-colors"
+              hreflang={locale}
+            >
+              {locale.toUpperCase()}
+            </a>
+          ) : (
+            <span
+              class="text-muted-foreground/40 cursor-not-allowed"
+              title={`No ${locale.toUpperCase()} version available`}
+              aria-disabled="true"
+            >
+              {locale.toUpperCase()}
+            </span>
+          )}
+        </>
+      );
+    })
+  }
+</div>

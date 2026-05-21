@@ -1,0 +1,121 @@
+[
+  {
+    "slug": "agent-browser-ai-agent-interface-en",
+    "title": "Agent Browser as an interface for AI agents",
+    "description": "Agent Browser turns browser automation into a clearer interface for AI agents through snapshots, refs, persistent sessions, CDP, and observability tools.",
+    "excerpt": "",
+    "tags": [
+      "ai-agents",
+      "browser-automation",
+      "tool-review"
+    ],
+    "series": null,
+    "created": "2026-05-20",
+    "updated": "",
+    "lang": "en",
+    "translationKey": "agent-browser-ai-agent-interface",
+    "outboundLinks": []
+  },
+  {
+    "slug": "agent-browser-ai-agent-interface",
+    "title": "Agent Browser biến browser thành interface cho AI agent",
+    "description": "Agent Browser biến browser automation thành một interface dễ hiểu hơn cho AI agent bằng snapshot, refs, session bền vững, CDP và công cụ quan sát/debug.",
+    "excerpt": "",
+    "tags": [
+      "ai-agents",
+      "browser-automation"
+    ],
+    "series": null,
+    "created": "2026-05-20",
+    "updated": "",
+    "lang": "vi",
+    "translationKey": "agent-browser-ai-agent-interface",
+    "outboundLinks": []
+  },
+  {
+    "slug": "dont-compete-through-the-small-door",
+    "title": "Don't compete through the small door",
+    "description": "A founder-oriented essay on avoiding crowded markets, capturing value, and building monopoly-like advantage from a small market wedge.",
+    "excerpt": "",
+    "tags": [
+      "business-strategy",
+      "founder",
+      "market-positioning",
+      "monopoly",
+      "competition",
+      "value-capture"
+    ],
+    "series": null,
+    "created": "2026-05-20",
+    "updated": "",
+    "lang": "en",
+    "translationKey": "dung-canh-tranh-o-canh-cua-nho",
+    "outboundLinks": []
+  },
+  {
+    "slug": "google-antigravity-sdk",
+    "title": "Google Antigravity SDK: Khi bạn không cần tự build agent infrastructure từ đầu",
+    "description": "Google Antigravity SDK đóng gói production runtime của Antigravity 2.0 thành Python library — developer kế thừa toàn bộ harness và tập trung vào logic của agent, không phải plumbing.",
+    "excerpt": "",
+    "tags": [
+      "ai-agents",
+      "agentic-coding",
+      "dev-learning"
+    ],
+    "series": null,
+    "created": "2026-05-21",
+    "updated": "",
+    "lang": "vi",
+    "translationKey": "google-antigravity-sdk",
+    "outboundLinks": []
+  },
+  {
+    "slug": "kol-x-ai-dev-tools",
+    "title": "KOL X cho AI và dev tools",
+    "description": "Một radar follow X có chủ đích cho developer muốn học AI, dev tools, product judgement, design engineering và engineering leadership từ đúng nguồn tín hiệu.",
+    "excerpt": "",
+    "tags": [
+      "developer-radar",
+      "tech-radar",
+      "dev-learning"
+    ],
+    "series": null,
+    "created": "2026-05-20",
+    "updated": "",
+    "lang": "vi",
+    "translationKey": "kol-x-ai-dev-tools",
+    "outboundLinks": []
+  },
+  {
+    "slug": "x-accounts-ai-dev-tools",
+    "title": "X accounts for AI and dev tools",
+    "description": "A curated radar for developers who want to follow better signals on AI, dev tools, product judgment, design engineering, and software leadership.",
+    "excerpt": "",
+    "tags": [
+      "developer-radar",
+      "tech-radar",
+      "dev-learning"
+    ],
+    "series": null,
+    "created": "2026-05-20",
+    "updated": "",
+    "lang": "en",
+    "translationKey": "kol-x-ai-dev-tools",
+    "outboundLinks": []
+  },
+  {
+    "slug": "dung-canh-tranh-o-canh-cua-nho",
+    "title": "Đừng cạnh tranh ở cánh cửa nhỏ",
+    "description": "Đừng bắt đầu startup bằng một thị trường đông đúc; hãy tìm một thị trường nhỏ có thể thống trị, tạo khác biệt 10x và capture giá trị bền vững.",
+    "excerpt": "",
+    "tags": [
+      "business-strategy"
+    ],
+    "series": null,
+    "created": "2026-05-19",
+    "updated": "",
+    "lang": "vi",
+    "translationKey": "dung-canh-tranh-o-canh-cua-nho",
+    "outboundLinks": []
+  }
+]

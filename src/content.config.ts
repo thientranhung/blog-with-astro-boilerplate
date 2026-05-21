@@ -1,0 +1,61 @@
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
+import config from "@/config";
+
+export const BLOG_PATH = "src/content/posts";
+
+const posts = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
+  schema: ({ image }) =>
+    z
+      .object({
+        author: z.string().default(config.site.author),
+        // AstroPaper native date fields
+        pubDatetime: z.date().optional(),
+        modDatetime: z.date().optional().nullable(),
+        // Obsidian source date fields (YYYY-MM-DD strings)
+        created: z.string().optional(),
+        updated: z.string().optional(),
+        title: z.string(),
+        published: z.literal(true).optional(),
+        featured: z.boolean().optional(),
+        draft: z.boolean().optional(),
+        tags: z.array(z.string()).default(["others"]),
+        ogImage: image().or(z.string()).optional(),
+        cover: z.string().optional(),
+        description: z.string().optional(),
+        excerpt: z.string().optional(),
+        canonical: z.string().optional(),
+        hideEditPost: z.boolean().optional(),
+        timezone: z.string().optional(),
+        // Pipeline-injected fields
+        series: z.string().optional(),
+        lang: z.enum(["vi", "en"]).default("vi"),
+        translationKey: z.string().optional(),
+        sourcePath: z.string().optional(),
+      })
+      .transform(data => ({
+        ...data,
+        // Derive pubDatetime from `created` if not set directly (Obsidian notes)
+        pubDatetime:
+          data.pubDatetime ??
+          (data.created ? new Date(data.created) : new Date(0)),
+        // Derive modDatetime from `updated` if not set directly
+        modDatetime:
+          data.modDatetime ??
+          (data.updated ? new Date(data.updated) : undefined),
+      })),
+});
+
+const pages = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pages" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    ogImage: z.string().optional(),
+    canonicalURL: z.string().optional(),
+  }),
+});
+
+export const collections = { posts, pages };

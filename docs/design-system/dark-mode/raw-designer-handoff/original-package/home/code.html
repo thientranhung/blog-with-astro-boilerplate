@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>my-astro-blog | Chia sẻ kiến thức kỹ thuật</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#581e00",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface": "#0A0A0A",
+                    "surface-bright": "#363942",
+                    "muted": "#888888",
+                    "surface-container-lowest": "#0b0e15",
+                    "outline": "#8b90a0",
+                    "primary-container": "#0070f3",
+                    "secondary-container": "#6807ba",
+                    "surface-dim": "#10131b",
+                    "border": "#1F1F1F",
+                    "secondary": "#dbb8ff",
+                    "on-primary-fixed": "#001a43",
+                    "surface-container": "#1c1f27",
+                    "surface-container-highest": "#32353d",
+                    "primary-fixed-dim": "#aec6ff",
+                    "on-surface": "#e0e2ed",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-secondary-container": "#d0a6ff",
+                    "surface-tint": "#aec6ff",
+                    "on-tertiary-container": "#fffeff",
+                    "inverse-on-surface": "#2d3039",
+                    "inverse-surface": "#e0e2ed",
+                    "on-secondary": "#470083",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c1c6d7",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-variant": "#32353d",
+                    "on-primary-fixed-variant": "#004397",
+                    "surface-container-high": "#272a32",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ca4e00",
+                    "on-secondary-fixed": "#2b0052",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#ffffff",
+                    "foreground": "#EDEDED",
+                    "outline-variant": "#414754",
+                    "tertiary": "#ffb596",
+                    "secondary-fixed": "#efdbff",
+                    "secondary-fixed-dim": "#dbb8ff",
+                    "surface-container-low": "#181b23",
+                    "on-primary": "#002e6b",
+                    "primary": "#aec6ff",
+                    "on-secondary-fixed-variant": "#6600b7",
+                    "inverse-primary": "#0059c5",
+                    "on-background": "#e0e2ed",
+                    "background": "#000000",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base-unit": "4px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Geist"],
+                    "body-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "label-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "label-code": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #000;
+    color: #EDEDED;
+    font-family: "Geist", sans-serif;
+    -webkit-font-smoothing: antialiased
+    }
+/* Custom Paper Texture Overlay */
+.paper-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 50;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuArJcltmyvh-hJSRC1cpDNBTpAeR7IGo9ZXd_Y7Rx8eA_L23_5PL7tKCiPnK2bDciMbMgygfEjJq3Tmpi7thionj8MXx34aNWPIKEYnwkftMNDI2GrTrHhiAOCifkNFScUarb-m6wL9FFu6VcnbnNZEp-_AcXjDe_HX1XB1zdwLLvCFt9C7XcuUhJUZaG0oMUqDG7VyQwIS1D7Ad506C5d4kuvQU8IG8NkW1-GdUisA2lvlAuogNKAB2OI_HhKf462s2hn1gkgINNNg)
+    }
+.teal-link {
+    color: #2dd4bf;
+    /* Teal-400 equivalent for technical contrast */
+    transition: color 0.2s ease
+    }
+.teal-link:hover {
+    color: #5eead4
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="selection:bg-primary/30">
+<div class="paper-overlay"></div>
+<!-- TopNavBar -->
+<header class="bg-background dark:bg-background border-b border-border dark:border-border docked full-width top-0 z-40 sticky">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-foreground dark:text-foreground tracking-tighter" href="/">
+                    my-astro-blog
+                </a>
+<div class="hidden md:flex gap-6">
+<!-- Navigation Links from JSON: Home, Posts, Tags, About translated to VI -->
+<a class="text-primary dark:text-primary border-b-2 border-primary pb-1 font-label-code text-label-code hover:text-primary transition-colors duration-200" href="/">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-code text-label-code hover:text-primary transition-colors duration-200" href="/posts">Bài viết</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-code text-label-code hover:text-primary transition-colors duration-200" href="/tags">Thẻ</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-code text-label-code hover:text-primary transition-colors duration-200" href="/about">Giới thiệu</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<!-- VI/EN Toggle -->
+<div class="flex items-center bg-surface-container-low border border-border px-2 py-1 rounded-lg">
+<button class="px-2 py-0.5 text-label-code font-label-code bg-primary text-on-primary rounded-sm transition-all">VI</button>
+<button class="px-2 py-0.5 text-label-code font-label-code text-muted hover:text-foreground transition-all">EN</button>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="py-20 md:py-32 border-b border-border">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-foreground mb-6 leading-tight">
+                    Không gian chia sẻ kiến thức <span class="text-primary">kỹ thuật</span> và trải nghiệm lập trình.
+                </h1>
+<p class="font-body-md text-body-md text-muted mb-8 max-w-2xl">
+                    Chào mừng bạn đến với blog cá nhân của mình. Nơi tập trung vào việc giải quyết các vấn đề phức tạp một cách tinh gọn, hiệu quả và hiện đại nhất.
+                </p>
+<div class="flex gap-4">
+<a class="bg-primary-container text-on-primary-container px-6 py-2.5 font-label-code text-label-code rounded-lg hover:opacity-90 transition-opacity" href="/posts">
+                        Xem bài viết
+                    </a>
+<a class="border border-border text-foreground px-6 py-2.5 font-label-code text-label-code rounded-lg hover:bg-surface-container-low transition-colors" href="/about">
+                        Tìm hiểu thêm
+                    </a>
+</div>
+</div>
+</section>
+<!-- Recent Posts Section -->
+<section class="py-16">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-foreground mb-2">Bài viết mới nhất</h2>
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+</div>
+<a class="teal-link font-label-code text-label-code flex items-center gap-2" href="/posts">
+                    Tất cả bài viết
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Posts Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Post Card 1 -->
+<article class="group bg-surface border border-border p-gutter hover:border-primary/50 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label-code text-label-code text-primary uppercase tracking-widest">Astro</span>
+<span class="w-1 h-1 bg-border rounded-full"></span>
+<time class="font-label-code text-label-code text-muted">24 Th10, 2024</time>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-foreground group-hover:text-primary transition-colors mb-4">
+                            Tối ưu hóa Performance cho Blog sử dụng Astro và Tailwind CSS
+                        </h3>
+<p class="font-body-sm text-body-sm text-muted line-clamp-3 mb-6">
+                            Khám phá các kỹ thuật tinh chỉnh Lighthouse score lên 100 bằng cách tận dụng Partial Hydration và cấu trúc CSS nguyên tử của Tailwind. Những sai lầm thường gặp và cách khắc phục hiệu quả...
+                        </p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#performance</span>
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#web-dev</span>
+</div>
+</article>
+<!-- Post Card 2 -->
+<article class="group bg-surface border border-border p-gutter hover:border-primary/50 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label-code text-label-code text-primary uppercase tracking-widest">TypeScript</span>
+<span class="w-1 h-1 bg-border rounded-full"></span>
+<time class="font-label-code text-label-code text-muted">18 Th10, 2024</time>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-foreground group-hover:text-primary transition-colors mb-4">
+                            Tại sao Clean Code vẫn quan trọng trong kỷ nguyên AI?
+                        </h3>
+<p class="font-body-sm text-body-sm text-muted line-clamp-3 mb-6">
+                            Khi Copilot có thể viết code hộ bạn, việc hiểu rõ cấu trúc và tính duy trì của mã nguồn càng trở nên quan trọng hơn bao giờ hết. Bài viết phân tích các nguyên tắc SOLID trong ngữ cảnh mới...
+                        </p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#ai</span>
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#software-engineering</span>
+</div>
+</article>
+<!-- Post Card 3 -->
+<article class="group bg-surface border border-border p-gutter hover:border-primary/50 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label-code text-label-code text-primary uppercase tracking-widest">Design</span>
+<span class="w-1 h-1 bg-border rounded-full"></span>
+<time class="font-label-code text-label-code text-muted">12 Th10, 2024</time>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-foreground group-hover:text-primary transition-colors mb-4">
+                            Typography trong thiết kế Technical Blog
+                        </h3>
+<p class="font-body-sm text-body-sm text-muted line-clamp-3 mb-6">
+                            Nghệ thuật chọn font chữ giúp tăng khả năng đọc mã nguồn và nội dung kỹ thuật dài. So sánh JetBrains Mono, Geist và Inter trong trải nghiệm người dùng thực tế...
+                        </p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#ui-ux</span>
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#typography</span>
+</div>
+</article>
+<!-- Post Card 4 -->
+<article class="group bg-surface border border-border p-gutter hover:border-primary/50 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="font-label-code text-label-code text-primary uppercase tracking-widest">Backend</span>
+<span class="w-1 h-1 bg-border rounded-full"></span>
+<time class="font-label-code text-label-code text-muted">05 Th10, 2024</time>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-foreground group-hover:text-primary transition-colors mb-4">
+                            Xây dựng API Gateway nhẹ nhàng với Hono.js
+                        </h3>
+<p class="font-body-sm text-body-sm text-muted line-clamp-3 mb-6">
+                            Hono.js đang thay đổi cách chúng ta nhìn nhận về middleware và tốc độ xử lý ở Edge. Hướng dẫn chi tiết cách deploy trên Cloudflare Workers với độ trễ cực thấp...
+                        </p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#backend</span>
+<span class="px-2 py-1 bg-surface-container-low text-label-code font-label-code text-on-surface-variant border border-border">#javascript</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Newsletter / Subscription Card -->
+<section class="mb-20">
+<div class="bg-surface-container-low border border-border p-gutter md:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="mail">mail</span>
+</div>
+<div class="relative z-10 max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-foreground mb-4">Đăng ký nhận tin</h2>
+<p class="font-body-md text-body-md text-muted mb-8">
+                        Đừng bỏ lỡ những bài viết chuyên sâu về kỹ thuật. Mình chỉ gửi email khi có nội dung thực sự giá trị.
+                    </p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="bg-surface border border-border text-foreground px-4 py-2.5 font-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none flex-grow rounded-lg" placeholder="Email của bạn..." type="email"/>
+<button class="bg-foreground text-background px-8 py-2.5 font-label-code text-label-code font-bold rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap" type="submit">
+                            Đăng ký
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="bg-background dark:bg-background border-t border-border dark:border-border full-width mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="text-body-md font-body-md font-bold text-foreground">my-astro-blog</span>
+<p class="text-muted dark:text-muted font-body-sm text-body-sm mt-2">© 2024 Technical Blog. Built with precision.</p>
+</div>
+<div class="flex gap-8">
+<div class="flex gap-4">
+<!-- Links from JSON: RSS, Sitemap -->
+<a class="text-muted dark:text-muted font-label-code text-label-code hover:text-primary dark:hover:text-primary transition-colors duration-200" href="/rss">RSS</a>
+<a class="text-muted dark:text-muted font-label-code text-label-code hover:text-primary dark:hover:text-primary transition-colors duration-200" href="/sitemap">Sitemap</a>
+</div>
+<div class="flex gap-4 items-center">
+<a class="text-muted hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</a>
+<a class="text-muted hover:text-primary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for smooth scrolling and header animation
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-opacity-95', 'backdrop-blur-md');
+            } else {
+                header.classList.remove('bg-opacity-95', 'backdrop-blur-md');
+            }
+        });
+
+        // Simple tab toggle for VI/EN
+        const langBtns = document.querySelectorAll('.flex.items-center.bg-surface-container-low button');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('text-muted');
+                });
+                btn.classList.add('bg-primary', 'text-on-primary');
+                btn.classList.remove('text-muted');
+            });
+        });
+    </script>
+</body></html>

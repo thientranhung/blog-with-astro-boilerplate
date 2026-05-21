@@ -1,0 +1,65 @@
+{
+  "vi": {
+    "agentic-coding": [
+      "google-antigravity-sdk"
+    ],
+    "ai-agents": [
+      "agent-browser-ai-agent-interface",
+      "google-antigravity-sdk"
+    ],
+    "browser-automation": [
+      "agent-browser-ai-agent-interface"
+    ],
+    "business-strategy": [
+      "dung-canh-tranh-o-canh-cua-nho"
+    ],
+    "dev-learning": [
+      "google-antigravity-sdk",
+      "kol-x-ai-dev-tools"
+    ],
+    "developer-radar": [
+      "kol-x-ai-dev-tools"
+    ],
+    "tech-radar": [
+      "kol-x-ai-dev-tools"
+    ]
+  },
+  "en": {
+    "ai-agents": [
+      "agent-browser-ai-agent-interface-en"
+    ],
+    "browser-automation": [
+      "agent-browser-ai-agent-interface-en"
+    ],
+    "business-strategy": [
+      "dont-compete-through-the-small-door"
+    ],
+    "competition": [
+      "dont-compete-through-the-small-door"
+    ],
+    "dev-learning": [
+      "x-accounts-ai-dev-tools"
+    ],
+    "developer-radar": [
+      "x-accounts-ai-dev-tools"
+    ],
+    "founder": [
+      "dont-compete-through-the-small-door"
+    ],
+    "market-positioning": [
+      "dont-compete-through-the-small-door"
+    ],
+    "monopoly": [
+      "dont-compete-through-the-small-door"
+    ],
+    "tech-radar": [
+      "x-accounts-ai-dev-tools"
+    ],
+    "tool-review": [
+      "agent-browser-ai-agent-interface-en"
+    ],
+    "value-capture": [
+      "dont-compete-through-the-small-door"
+    ]
+  }
+}

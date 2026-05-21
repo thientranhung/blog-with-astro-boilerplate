@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#581e00",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface": "#0A0A0A",
+                    "surface-bright": "#363942",
+                    "muted": "#888888",
+                    "surface-container-lowest": "#0b0e15",
+                    "outline": "#8b90a0",
+                    "primary-container": "#0070f3",
+                    "secondary-container": "#6807ba",
+                    "surface-dim": "#10131b",
+                    "border": "#1F1F1F",
+                    "secondary": "#dbb8ff",
+                    "on-primary-fixed": "#001a43",
+                    "surface-container": "#1c1f27",
+                    "surface-container-highest": "#32353d",
+                    "primary-fixed-dim": "#aec6ff",
+                    "on-surface": "#e0e2ed",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-secondary-container": "#d0a6ff",
+                    "surface-tint": "#aec6ff",
+                    "on-tertiary-container": "#fffeff",
+                    "inverse-on-surface": "#2d3039",
+                    "inverse-surface": "#e0e2ed",
+                    "on-secondary": "#470083",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c1c6d7",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-variant": "#32353d",
+                    "on-primary-fixed-variant": "#004397",
+                    "surface-container-high": "#272a32",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ca4e00",
+                    "on-secondary-fixed": "#2b0052",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#ffffff",
+                    "foreground": "#EDEDED",
+                    "outline-variant": "#414754",
+                    "tertiary": "#ffb596",
+                    "secondary-fixed": "#efdbff",
+                    "secondary-fixed-dim": "#dbb8ff",
+                    "surface-container-low": "#181b23",
+                    "on-primary": "#002e6b",
+                    "primary": "#aec6ff",
+                    "on-secondary-fixed-variant": "#6600b7",
+                    "inverse-primary": "#0059c5",
+                    "on-background": "#e0e2ed",
+                    "background": "#000000",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base-unit": "4px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Geist"],
+                    "body-sm": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "label-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "label-code": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .search-highlight {
+            color: #aec6ff;
+            background-color: rgba(174, 198, 255, 0.15);
+            padding: 0 2px;
+            font-weight: 600;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #1F1F1F; }
+    </style>
+</head>
+<body class="bg-background text-foreground font-body-md selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<header class="bg-background dark:bg-background border-b border-border dark:border-border docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-foreground dark:text-foreground">
+                Technical Blog
+            </div>
+<nav class="hidden md:flex items-center space-x-gutter">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-label-code text-label-code" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-label-code text-label-code" href="#">Posts</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-label-code text-label-code" href="#">Tags</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-label-code text-label-code" href="#">About</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">language</button>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">dark_mode</button>
+</div>
+</div>
+</header>
+<main class="min-h-screen pt-12 pb-24 px-margin-mobile md:px-margin-desktop max-w-[800px] mx-auto">
+<!-- Search Interface -->
+<section class="space-y-8">
+<div class="space-y-2">
+<h1 class="font-display-lg text-display-lg md:text-[48px] tracking-tight">Tìm kiếm</h1>
+<p class="font-body-sm text-muted">Khám phá nội dung trên <span class="font-label-code text-primary">my-astro-blog</span></p>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-muted group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-border focus:border-primary focus:ring-1 focus:ring-primary rounded-lg py-5 pl-12 pr-4 text-body-md font-body-md placeholder:text-muted transition-all outline-none" placeholder="Nhập từ khóa tìm kiếm..." type="text" value="performance"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<kbd class="hidden md:inline-flex items-center border border-border rounded px-2 py-0.5 font-label-code text-xs text-muted">ESC</kbd>
+</div>
+</div>
+<div class="flex items-center justify-between border-b border-border pb-4">
+<span class="font-label-code text-label-code text-muted">Hiển thị 3 kết quả</span>
+<span class="font-label-code text-[11px] text-muted uppercase tracking-widest flex items-center">
+                    Powered by <span class="text-foreground ml-1 font-bold">Pagefind</span>
+</span>
+</div>
+<!-- Search Results List -->
+<div class="space-y-0 divide-y divide-border">
+<!-- Result Item 1 -->
+<article class="py-gutter group cursor-pointer hover:bg-surface-container-lowest transition-colors -mx-4 px-4 rounded-lg">
+<div class="flex flex-col space-y-2">
+<div class="flex items-center space-x-3">
+<span class="font-label-code text-xs text-primary bg-primary/10 px-2 py-0.5 rounded">Tutorial</span>
+<span class="font-label-code text-xs text-muted">15 Tháng 5, 2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg group-hover:text-primary transition-colors">Tối ưu hóa <span class="search-highlight">performance</span> cho ứng dụng React</h2>
+<p class="font-body-md text-on-surface-variant line-clamp-2">
+                            Trong bài viết này, chúng ta sẽ tìm hiểu các kỹ thuật nâng cao để cải thiện <span class="search-highlight">performance</span>, bao gồm memoization, code-splitting và cách sử dụng React Profiler để xác định các thành phần render chậm...
+                        </p>
+<div class="pt-2 flex items-center text-primary font-label-code text-label-code opacity-0 group-hover:opacity-100 transition-opacity">
+                            Đọc thêm <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Result Item 2 -->
+<article class="py-gutter group cursor-pointer hover:bg-surface-container-lowest transition-colors -mx-4 px-4 rounded-lg">
+<div class="flex flex-col space-y-2">
+<div class="flex items-center space-x-3">
+<span class="font-label-code text-xs text-tertiary bg-tertiary/10 px-2 py-0.5 rounded">DevOps</span>
+<span class="font-label-code text-xs text-muted">02 Tháng 5, 2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg group-hover:text-primary transition-colors">Web Vitals và bài toán <span class="search-highlight">performance</span></h2>
+<p class="font-body-md text-on-surface-variant line-clamp-2">
+                            Chỉ số Core Web Vitals đã trở thành tiêu chuẩn vàng để đo lường <span class="search-highlight">performance</span>. Tìm hiểu cách LCP, FID và CLS ảnh hưởng đến thứ hạng SEO của trang web của bạn...
+                        </p>
+<div class="pt-2 flex items-center text-primary font-label-code text-label-code opacity-0 group-hover:opacity-100 transition-opacity">
+                            Đọc thêm <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Result Item 3 -->
+<article class="py-gutter group cursor-pointer hover:bg-surface-container-lowest transition-colors -mx-4 px-4 rounded-lg">
+<div class="flex flex-col space-y-2">
+<div class="flex items-center space-x-3">
+<span class="font-label-code text-xs text-secondary bg-secondary/10 px-2 py-0.5 rounded">Architecture</span>
+<span class="font-label-code text-xs text-muted">28 Tháng 4, 2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg group-hover:text-primary transition-colors">Astro: Framework tập trung vào <span class="search-highlight">performance</span></h2>
+<p class="font-body-md text-on-surface-variant line-clamp-2">
+                            Tại sao Astro lại đạt được điểm số <span class="search-highlight">performance</span> tuyệt đối 100/100 trên Lighthouse? Khám phá kiến trúc Island Architecture và cách nó loại bỏ Javascript không cần thiết...
+                        </p>
+<div class="pt-2 flex items-center text-primary font-label-code text-label-code opacity-0 group-hover:opacity-100 transition-opacity">
+                            Đọc thêm <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State / No More Results -->
+<div class="py-12 text-center border-t border-border">
+<p class="font-body-sm text-muted">Bạn đã xem hết kết quả cho từ khóa này.</p>
+<button class="mt-4 px-6 py-2 border border-border hover:border-primary hover:text-primary transition-colors font-label-code text-label-code">
+                    Quay lại trang chủ
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-background border-t border-border dark:border-border full-width mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-body-md font-body-md font-bold text-foreground mb-4 md:mb-0">
+                Technical Blog
+            </div>
+<div class="font-body-sm text-muted text-center md:text-left mb-4 md:mb-0">
+                © 2024 Technical Blog. Built with precision.
+            </div>
+<nav class="flex items-center space-x-6">
+<a class="text-muted hover:text-primary transition-colors duration-200 font-label-code text-label-code" href="#">RSS</a>
+<a class="text-muted hover:text-primary transition-colors duration-200 font-label-code text-label-code" href="#">Sitemap</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Micro-interactions for search input
+        const searchInput = document.querySelector('input[type="text"]');
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchInput.blur();
+            }
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        // Add a subtle "typing" effect simulation for the placeholder if needed
+        // but keeping it functional for now.
+    </script>
+</body></html>

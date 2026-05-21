@@ -1,0 +1,127 @@
+/* Register design tokens for Tailwind v4 */
+@theme inline {
+  /* Map Tailwind utility names to semantic CSS variables */
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --color-accent: var(--color-primary);
+  --color-accent-foreground: var(--color-on-primary);
+  --color-muted: var(--color-surface-container);
+  --color-muted-foreground: var(--color-text-muted);
+  --color-border: var(--color-border-base);
+  --font-app: var(--font-geist);
+}
+
+/* ── Light theme (default) ───────────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  /* Core surfaces */
+  --color-bg: #ffffff;
+  --color-background: #ffffff;
+  --color-surface: #fafaf7;
+  --color-surface-dim: #f3f4ef;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f7f2;
+  --color-surface-container: #eef0ea;
+  --color-surface-container-high: #e4e7df;
+  --color-surface-container-highest: #d8dcd2;
+
+  /* Text */
+  --color-text: #111827;
+  --color-on-surface: #1f2933;
+  --color-on-surface-variant: #4b5565;
+  --color-text-muted: #667085;
+
+  /* Borders & outlines */
+  --color-border-base: #d8d7cf;
+  --color-border: #d8d7cf;
+  --color-outline: #7b8190;
+  --color-outline-variant: #d6dae2;
+
+  /* Brand colors */
+  --color-primary: #0059c5;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #d8e2ff;
+  --color-on-primary-container: #001a43;
+  --color-secondary: #6600b7;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #efdbff;
+  --color-tertiary: #7d2d00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ffdbcd;
+
+  /* Semantic states */
+  --color-error: #b42318;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+
+  /* Code */
+  --color-code-surface: #f1f5f9;
+  --color-code-text: #243b53;
+
+  /* Callouts */
+  --color-callout-note-bg: #eaf1ff;
+  --color-callout-note-border: #0059c5;
+  --color-callout-warning-bg: #fff0e6;
+  --color-callout-warning-border: #7d2d00;
+
+  /* Backlinks */
+  --color-backlink-bg: #f3e8ff;
+  --color-backlink-border: #6600b7;
+}
+
+/* ── Dark theme ──────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  /* Core surfaces */
+  --color-bg: #121212;
+  --color-background: #121212;
+  --color-surface: #1a1a1a;
+  --color-surface-dim: #181818;
+  --color-surface-container-lowest: #161616;
+  --color-surface-container-low: #1e1e1e;
+  --color-surface-container: #242424;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #333333;
+
+  /* Text */
+  --color-text: #e0e2ed;
+  --color-on-surface: #e0e2ed;
+  --color-on-surface-variant: #c1c6d7;
+  --color-text-muted: #888888;
+
+  /* Borders & outlines */
+  --color-border-base: #2a2a2a;
+  --color-border: #2a2a2a;
+  --color-outline: #8b90a0;
+  --color-outline-variant: #414754;
+
+  /* Brand colors */
+  --color-primary: #aec6ff;
+  --color-on-primary: #002e6b;
+  --color-primary-container: #0070f3;
+  --color-on-primary-container: #ffffff;
+  --color-secondary: #dbb8ff;
+  --color-on-secondary: #470083;
+  --color-secondary-container: #6807ba;
+  --color-tertiary: #ffb596;
+  --color-on-tertiary: #581e00;
+  --color-tertiary-container: #ca4e00;
+
+  /* Semantic states */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+
+  /* Code */
+  --color-code-surface: #161616;
+  --color-code-text: #e0e2ed;
+
+  /* Callouts */
+  --color-callout-note-bg: #101b2d;
+  --color-callout-note-border: #aec6ff;
+  --color-callout-warning-bg: #24170f;
+  --color-callout-warning-border: #ffb596;
+
+  /* Backlinks */
+  --color-backlink-bg: #17152a;
+  --color-backlink-border: #dbb8ff;
+}

@@ -1,0 +1,32 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import backlinksData from "@/content/generated/backlinks.json";
+import config from "@/config";
+
+type BacklinkEntry = { slug: string; title: string };
+
+const { slug } = Astro.props as { slug: string };
+const locale = Astro.currentLocale ?? config.site.lang;
+const backlinks =
+  (backlinksData as Record<string, BacklinkEntry[]>)[slug] ?? [];
+---
+
+{
+  backlinks.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-accent mb-4 text-lg font-semibold">Bài viết liên kết</h2>
+      <ul class="flex flex-col gap-2">
+        {backlinks.map(({ slug: bSlug, title }) => (
+          <li>
+            <a
+              href={getRelativeLocaleUrl(locale, `posts/${bSlug}`)}
+              class="hover:text-accent underline underline-offset-4"
+            >
+              {title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
