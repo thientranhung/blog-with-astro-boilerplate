@@ -1,5 +1,7 @@
 # Astro Obsidian Blog Boilerplate
 
+![Astro Obsidian Blog Preview](./home-blog.png)
+
 A professional, high-performance boilerplate for creating a personal blog with Astro (using the AstroPaper theme), syncing your content directly from an Obsidian vault, and deploying to Cloudflare Workers.
 
 ## Personalization & Customization
