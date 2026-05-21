@@ -1,9 +1,9 @@
 {
-  "name": "my-astro-blog",
-  "description": "Trần Hưng Thiện's Personal Blog - Built with Astro, Tailwind CSS, and Obsidian. A space to share research and insights on software engineering and artificial intelligence.",
+  "name": "astro-obsidian-blog-boilerplate",
+  "description": "A professional boilerplate for creating a personal blog with Astro (AstroPaper theme) and syncing content directly from an Obsidian vault.",
   "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },

@@ -1,6 +1,31 @@
-# Trần Hưng Thiện - Personal Blog
+# Astro Obsidian Blog Boilerplate
 
-Personal blog of Trần Hưng Thiện (Fullstack Developer & AI Engineer). A place where I share my thoughts, research, and explorations in software engineering, artificial intelligence, and business. Built with Astro + AstroPaper, content synced from Obsidian, and deployed to Cloudflare Workers.
+A professional, high-performance boilerplate for creating a personal blog with Astro (using the AstroPaper theme), syncing your content directly from an Obsidian vault, and deploying to Cloudflare Workers.
+
+## Personalization & Customization
+
+To turn this boilerplate into your own personal blog, follow these steps:
+
+1. **Configure Site Metadata**:
+   Open [astro-paper.config.ts](file:///Users/tranthien/Documents/2.DEV/3.BLOGS/my-blog-with-astro-boilerplate/astro-paper.config.ts) and modify the `site` and `socials` properties to match your details:
+   - `url`: Your production website domain (e.g., `https://yourdomain.com`).
+   - `title`: The title of your blog.
+   - `description`: The meta description for SEO.
+   - `author`: Your name.
+   - `profile`: Your primary profile link (e.g. your GitHub profile).
+   - `socials`: Update URLs for GitHub, X, LinkedIn, etc.
+
+2. **Configure package.json**:
+   Open [package.json](file:///Users/tranthien/Documents/2.DEV/3.BLOGS/my-blog-with-astro-boilerplate/package.json) and modify `name` and `description` to match your personal repository details.
+
+3. **Configure Environment Variables**:
+   Copy `.env.example` to `.env` and fill in your settings:
+   - `VAULT_PATH`: The absolute path to your Obsidian vault.
+   - `VAULT_POSTS_FOLDER`: The folder name in Obsidian where your notes to publish are stored (default: `50-Publish`).
+   - (Optional) Configure Cloudflare R2 credentials if you want to automatically upload local Obsidian images to Cloudflare R2 CDN.
+
+4. **Customize CSS and Styling**:
+   - Customize your theme colors, fonts, and CSS variables in [src/styles/theme.css](file:///Users/tranthien/Documents/2.DEV/3.BLOGS/my-blog-with-astro-boilerplate/src/styles/theme.css) or modify the layouts under `src/layouts/`.
 
 ## How it works
 

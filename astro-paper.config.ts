@@ -2,13 +2,13 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://blog.thientranhung.dev",
-    title: "Trần Hưng Thiện",
-    description: "Fullstack developer & AI Engineer. Ghi lại những gì tôi nghiên cứu, khám phá về công nghệ và kinh doanh.",
-    author: "Trần Hưng Thiện",
-    profile: "https://github.com/thientranhung",
+    url: "https://blog.example.com", // Replace with your production domain
+    title: "Astro Obsidian Blog",   // Replace with your blog title
+    description: "A professional boilerplate for creating a personal blog with Astro (AstroPaper theme) and syncing content from Obsidian.", // Replace with your blog description
+    author: "Your Name",            // Replace with your name
+    profile: "https://github.com/your-username", // Replace with your personal profile link
     ogImage: "default-og.jpg",
-    lang: "vi",
+    lang: "vi",                     // Default language ("vi" or "en")
     timezone: "Asia/Ho_Chi_Minh",
     dir: "ltr",
   },
@@ -28,9 +28,9 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/thientranhung" },
-    { name: "x",        url: "https://x.com/hungthien87" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/tran-thien-a264334b" },
+    { name: "github",   url: "https://github.com/your-username" }, // Replace with your profiles
+    { name: "x",        url: "https://x.com/your-username" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/your-username" },
   ],
   shareLinks: [
     { name: "x",        url: "https://x.com/intent/post?url=" },
